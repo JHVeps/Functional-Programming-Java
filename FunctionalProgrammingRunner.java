@@ -12,6 +12,8 @@ public class FunctionalProgrammingRunner {
 		printBasicWithFiltering(list); // <- "Bat", "Cat"
 		printWihtFunctionalProgramming(list); // <- "Apple", "Bat", "Cat", "Dog"
 		printWihtFunctionalProgramminAndFilter(list);// <- "Bat", "Cat"
+		printLowerCase(list);
+		printLengthOfElement(list);
 
 		printEvenNumbersWithFP(numList);
 		printOddNumbersWithFP(numList);
@@ -47,6 +49,17 @@ public class FunctionalProgrammingRunner {
 				.forEach(element -> System.out.println("ends withs (at): " + element));
 	}
 
+	// Functional string elements to lower case
+	private static void printLowerCase(List<String> list) {
+		list.stream().map(element -> element.toLowerCase())
+				.forEach(element -> System.out.println("Lower cased: " + element));
+	}
+
+	// Functional Programming print length of each element in list
+	private static void printLengthOfElement(List<String> list) {
+		list.stream().map(element -> element.length()).forEach(element -> System.out.println(element));
+	}
+
 	// even nums w fp
 	private static void printEvenNumbersWithFP(List<Integer> numList) {
 		numList.stream().filter(element -> element % 2 == 0)
@@ -58,6 +71,7 @@ public class FunctionalProgrammingRunner {
 		numList.stream().filter(element -> element % 2 == 1)
 				.forEach(element -> System.out.println("is odd: " + element));
 	}
+
 
 }
 
